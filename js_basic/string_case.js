@@ -20,5 +20,40 @@ var z = '3';
 z = parseInt(z);
 
 // number to string conversion -- just use " " empty and + sign
-z = " "+ z;
-console.log(typeof(z));
+z = " " + z;
+console.log(typeof (z));
+
+// --- Math operation like (+/-/*/.. )
+
+var num1 = 75;
+var num2 = 23;
+var add = num1 + num2;
+console.log(add)
+var minus = num1 - num2;
+console.log(minus)
+
+var mul = num1 * num2;
+console.log(mul)
+
+var div = num1 / num2;
+console.log(div)
+
+var mod = num1 % num2;
+console.log(mod)
+
+var negativeValue = -5;
+negativeValue = Math.abs(negativeValue);
+console.log(negativeValue)
+
+// round function change the number in integer number. 0.5 er besi hole uporer dike full korbe niche hole nicher dike. 
+var r = 4.75;
+var r = Math.round(r)
+console.log(r)
+// ceil function directly porer purno sonkha return korbe
+var c = 4.23;
+var c = Math.ceil(c);
+console.log(c)
+// floor function fractional part remove kore dibe.
+var f = 6.24;
+var f = Math.floor(f)
+console.log(f)
