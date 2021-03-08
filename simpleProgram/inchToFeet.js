@@ -1,5 +1,5 @@
-function inchToFeet(num){
-    result = num/12;
+function inchToFeet(num) {
+    result = num / 12;
     return result;
 }
 var r = inchToFeet(100);
