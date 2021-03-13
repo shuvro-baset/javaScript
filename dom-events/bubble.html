@@ -16,18 +16,46 @@
             <li class="item">Modi, tenetur eaque!</li>
             <li class="item">Explicabo, minus nam.</li>
         </ul>
+
+        <button id="addNew">add new item</button>
     </div>
 
 
     <script>
-        document.getElementById('first').addEventListener('click', function(event) {
-             console.log("first item clicked")
-        })
+        // document.getElementById('first').addEventListener('click', function(event) {
+        //      console.log("first item clicked")
+        // })
 
         
-        document.getElementById('container').addEventListener('click', function(event) {
-             console.log("container item clicked")
+        // document.getElementById('container').addEventListener('click', function(event) {
+        //      console.log("container item clicked")
+        // })
+
+
+
+        // event delegate 
+        // var items = document.getElementsByClassName('item');
+        // for (var i = 0; i < items.length; i++){
+        //     var item = items[i];
+        //     item.addEventListener('click', function(event) {
+        //         console.log(this, event.target.textContent);
+        //     })
+        // }
+
+
+        // adding new item on click button append child node 
+        document.getElementById('addNew').addEventListener('click',function(event) {
+            var itemParent = document.getElementById('myList');
+            var newItem = document.createElement('li');
+            newItem.innerText = 'I am new item';
+            itemParent.appendChild(newItem);
         })
+
+        // deleting any child after clicking this item and also new item 
+        document.getElementById('myList').addEventListener('click',function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+
     </script>
 </body>
 </html>
