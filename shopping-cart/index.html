@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button onclick="productIncreaseDecrease('phone', false)" class="btn btn-default"><i
+                                 class="fas fa-minus"></i></button>
+                           <input id="phone-count" type="text" class="form-control text-center" value="1">
+                           <button onclick="productIncreaseDecrease('phone', true)" class="btn btn-default"><i
+                                 class="fas fa-plus"></i></button>
+                        </div>
+                        <h5 id="phone-total">$1219</h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                           <button onclick="productIncreaseDecrease('case', false)" class="btn btn-default"><i
+                                 class="fas fa-minus"></i></button>
+                           <input id="case-count" type="text" class="form-control text-center" value="1">
+                           <button onclick="productIncreaseDecrease('case', true)" class="btn btn-default"><i
+                                 class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5 id="case-total">$59</h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5 id="total-price">$1,278</h5>
+                        <h5 id="tax-amount">$0</h5>
+                        <h5 id="grand-total">$1,278</h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <script>
+      // document.getElementById('case-increase').addEventListener('click', function(e) {
+      //    const caseInput = document.getElementById('case-count');
+      //    const caseCount = parseInt(caseInput.value);
+      //    const caseNewCount = caseCount + 1;
+      //    caseInput.value = caseNewCount;
+
+      //    const caseTotal = caseNewCount * 59;
+      //    document.getElementById('case-total').innerText = '$' +  caseTotal
+      // })
+
+      // document.getElementById('case-decrease').addEventListener('click', function(e) {
+      //    const caseInput = document.getElementById('case-count');
+      //    const caseCount = parseInt(caseInput.value);
+      //    const caseNewCount = caseCount - 1;
+      //    caseInput.value = caseNewCount;
+
+      //    const caseTotal = caseNewCount * 59;
+      //    document.getElementById('case-total').innerText = '$' +  caseTotal
+      // })
+
+      // now i do this same thing using function and it will be more efficient. 
+      function productIncreaseDecrease(product, isIncrease) {
+         // const productInput = document.getElementById(product + '-count');
+         // const productCount = parseInt(productInput.value);
+         const productCount = getInputValue(product);
+         let productNewCount = productCount;
+         if (isIncrease == true) {
+            productNewCount = productCount + 1;
+         }
+         if (isIncrease == false && productCount > 0) {
+            productNewCount = productCount - 1;
+         }
+         document.getElementById(product + '-count').value = productNewCount;
+         let productTotal = 0;
+         if (product == 'phone') {
+            productTotal = productNewCount * 1219;
+            console.log(productTotal)
+         }
+         if (product == 'case') {
+            productTotal = productNewCount * 59;
+         }
+         document.getElementById(product + '-total').innerText = '$' + productTotal
+         calculateTotal();
+
+      }
+
+      // total amount of product calculation 
+      function calculateTotal() {
+         const phoneCount = getInputValue('phone');
+         const caseCount = getInputValue('case');
+         const totalPrice = phoneCount * 1219 + caseCount * 59;
+         document.getElementById('total-price').innerText = '$' + totalPrice;
+         const tax = Math.round(totalPrice * 0.1);
+         document.getElementById('tax-amount').innerText = '$' + tax;
+         const grandTotal = totalPrice + tax;
+         document.getElementById('grand-total').innerText = '$' + grandTotal;
+      }
+      function getInputValue(product) {
+         const productInput = document.getElementById(product + '-count');
+         const productCount = parseInt(productInput.value);
+         return productCount;
+      }
+   </script>
+</body>
+
+</html>
