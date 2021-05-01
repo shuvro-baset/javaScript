@@ -19,3 +19,22 @@ var c = true;
 c = false;
 console.log(c)
 console.log(typeof c)
+
+
+//pre increment and post increment
+var x = 10 
+var y = 5 
+
+// pre increment 
+console.log(++x)
+console.log(x)
+
+// post increment
+console.log(y++)
+console.log(y)
+
+// decrement same as increment system
+
+// ternary operator >> var name = condition ? 'do it' : ' or do it'
+var result = x %2 == 0 ? 'even' : 'odd';
+console.log(result)
