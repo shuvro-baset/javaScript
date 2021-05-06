@@ -57,3 +57,21 @@ console.log(c)
 var f = 6.24;
 var f = Math.floor(f)
 console.log(f)
+
+
+// escape notation for string 
+
+var st = "Here I am trying to 'escape' a string";
+var st1 = "Here I am trying to \'escape'\ a string";
+
+console.log(st)
+console.log(st1)
+
+//  string comparison. javaScript can compare two strings using 'Lexicolgraphic' order. this order start from small letters
+//  like in this time a>A 
+// javaScript comparison between string and number it will convert that string into number at first. 
+// substr(4)
+// startsWith("")
+// endsWith("")
+// trim() .... space remove
+// var.split(' ')
