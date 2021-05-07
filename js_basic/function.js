@@ -1,8 +1,9 @@
-// define a function
+// define a function. you must write a 'function' then give your function_name
 function def(){
     // write what you wanna do in this function.... 
     console.log("this is my first function")
 }
+// call the function (invoking)
 def();
 
 // define a function with parameters
@@ -13,21 +14,12 @@ function mul(num){
 // calling function and passing a params value
 mul(5);
 
-// multiple parameters funciton
+// multiple parameters function
 function add(num1, num2){
     var result = num1 + num2;
     console.log(result);
 }
+// passing arguments
 add(23,17)
 
 
-// ------- object --------- //
-// define object
-var obj = {name: "shuvro", age: 28, phone: "1675"}
-console.log(obj)
-// calling object property 1st way
-var objName = obj.name
-console.log(objName)
-// calling object property 2nd way
-var objName2 = obj["name"]
-console.log(objName2)

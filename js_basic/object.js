@@ -8,6 +8,18 @@ var obj = {
 obj.z = 17
 console.log(obj)
 
+
+// ------- object --------- //
+// define object
+var obj = {name: "shuvro", age: 28, phone: "1675"}
+console.log(obj)
+// calling object property 1st way
+var objName = obj.name
+console.log(objName)
+// calling object property 2nd way
+var objName2 = obj["name"]
+console.log(objName2)
+
 // create an object using constructor(Object())
 var ob = Object()
 ob.a = 10
@@ -56,3 +68,22 @@ console.log('x' in obj1) // x is not in obj1. so it will return false
 for (var i in obj1) {
     console.log(i + ': ' + obj1[i])
 }
+
+// keys method shows key of object
+console.log(Object.keys(obj1))
+// values method shows value of keys
+console.log(Object.values(obj))
+// entries method shows entries keys and values
+console.log(Object.entries(obj))
+
+// if we set an object into another object then all changes will affect the object
+// var obj2 = obj1
+// obj2.c = 100
+// console.log(obj2)
+// console.log(obj1)
+
+// if we use assign method then it did not affect the object
+var obj2 = Object.assign({}, obj)
+obj2.x = 45
+console.log(obj2)
+console.log(obj)
