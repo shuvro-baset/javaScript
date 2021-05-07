@@ -16,3 +16,43 @@ console.log(ob)
 var ob2 = new Object()
 ob2.a = 10
 console.log(ob2)
+
+// accessing the object properties. we can access the properties in two ways. dot notation and array notation.
+console.log(obj.b)
+console.log(obj['b'])
+
+// updating the object
+obj.a = 100
+// adding new properties
+obj.c = 200
+console.log(obj)
+
+// remove properties using delete operator
+delete obj.c
+console.log(obj)
+
+// comparing two object
+var obj1 = {
+    a: 10, 
+    b : 200
+}
+var obj2 = {
+    a: 10, 
+    b : 200
+}
+console.log(obj1===obj2) // it will return false. cause their object address was not same.
+// if we want to compare object we should use their properties
+if (obj1.a===obj2.a && obj1.b===obj2.b) {
+    console.log(true)
+} else{
+    console.log(false)
+}
+// another way using json.stringify
+console.log(JSON.stringify(obj1)===JSON.stringify(obj2))
+
+// object properties traverse 
+console.log('x' in obj1) // x is not in obj1. so it will return false
+
+for (var i in obj1) {
+    console.log(i + ': ' + obj1[i])
+}

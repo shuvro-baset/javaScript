@@ -38,3 +38,5 @@ console.log(y)
 // ternary operator >> var name = condition ? 'do it' : ' or do it'
 var result = x %2 == 0 ? 'even' : 'odd';
 console.log(result)
+
+
