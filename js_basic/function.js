@@ -10,16 +10,26 @@ def();
 function mul(num){
     var result = num * 5;
     console.log(result);
+    return result;
 }
 // calling function and passing a params value
 mul(5);
 
 // multiple parameters function
 function add(num1, num2){
-    var result = num1 + num2;
-    console.log(result);
+    var res = num1 + num2;
+    console.log(res);
 }
 // passing arguments
 add(23,17)
 
 
+// return . we should use return method instead of console.log
+function add(num1, num2){
+    var result = num1 + num2;
+    console.log("I am calling");
+    return result
+}
+// passing arguments
+var r = add(23,17)
+console.log(r)
