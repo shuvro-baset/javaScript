@@ -1,4 +1,4 @@
-// basic callback function 
+// basic callback function, when we call a function as an arguments its called callback.
 
 function explainCallback(name, age, task){
     console.log('Hello: ', name);

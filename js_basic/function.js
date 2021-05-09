@@ -33,3 +33,14 @@ function add(num1, num2){
 // passing arguments
 var r = add(23,17)
 console.log(r)
+
+
+// inner function 
+function outer(greet, name){
+    function inner(){
+        console.log(greet, name)
+    }
+    inner()
+}
+outer("hi", "baset")
+
