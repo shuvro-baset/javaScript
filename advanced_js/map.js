@@ -1,5 +1,5 @@
 const numbers = [3,5,6,7,4,5];
-
+// map function use for creating new array from another array.It traverse previous array itself. within the function we can use our own functionality
 const result = numbers.map(function(element) {
     return element*element;
 })
