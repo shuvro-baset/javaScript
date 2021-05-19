@@ -11,4 +11,4 @@ function a(){
     }
 }
 var abc = a()
-console.log(abc)
+console.log(abc) 
