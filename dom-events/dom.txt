@@ -1,0 +1,4 @@
+dom = document object model  
+with dom we can opearate some operations
+dom can manipulate.
+we can change the object using dom
