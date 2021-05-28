@@ -14,36 +14,77 @@ console.dir(document.head) // it return all the property from head object. Actua
 // document.innerText returns browser output but document.textContent returns html output
 
 
-// select elements & assign them to variables.  querySelector always picks first element and only one element
+// --  querySelector always picks first element and only one element
 let lastItems = document.querySelectorAll('.item:last-child');
 console.log(lastItems)
 
+// ----parent child relationship----
+const grandParent = document.querySelector('.todo-list'); // main parent element
+const g_parent = grandParent.children // calling child of grand parent (it return a list)
+console.log(g_parent)
+const parent_two_child = g_parent[1].children
+console.log(parent_two_child)
+
+const parent = document.querySelector('#items'); // taking parent by selecting ul(id=items)
+const children = parent.children // calling all child of ul parent
+console.log(children);
+const child_of_parent = document.querySelector('.item') // we can also find the parent of children (descending order)
+console.log("here is parent of ", child_of_parent.parentElement)
+const child_grant_parent = child_of_parent.closest('.todo-list')
+console.log(child_grant_parent)
+// we can access siblings using nextElementSiblings and previousElementSiblings method.
+
+
+// ----creating an element-----
+const divElement = document.createElement('div'); // we will create a div name divElement
+divElement.className = 'red'; // set a class into divElement as class name 'red'
+divElement.setAttribute('id', 'red_id'); // set a id attributes into divElement as id name 'red_id'
+divElement.setAttribute('title', 'red div title'); // set a title attributes into divElement as 'red div title'
+
+const container = document.querySelector('.todo-list'); // finding main container where we put this div. 
+const h2Element = container.querySelector('h2'); // we take another reference element where we use new div after or before.
+container.insertBefore(divElement, h2Element) // finally set the divElement before the h2Element . 'insertBefore' function take two parameter first one is for value 2nd is for reference element
+
+// container.appendChild(divElement) --> it will set into last element of the container.
+
+// ---- event listeners ---- //  
+const headerElement = document.querySelector('#header'); //  
+headerElement.addEventListener('click',  (event) =>{
+    console.log(event);
+})
+
+
+
+
+
+// ----- TO-DO Project ------ // 
+// --select elements & assign them to variables.
 let newTask = document.querySelector('#new-task');
- let form = document.querySelector('form');
- let todoUl = document.querySelector('#items');
- let completeUl = document.querySelector('.complete-list ul');
+let form = document.querySelector('form');
+let todoUl = document.querySelector('#items');
+let completeUl = document.querySelector('.complete-list ul');
 
 
 // functions
 let createTask = function(task) {
-    let listItem = document.createElement('li');
-    let checkBox = document.createElement('input');
-    let label = document.createElement('label');
+    let listItem = document.createElement('li'); // create li element
+    let checkBox = document.createElement('input'); // create checkbox element
+    let label = document.createElement('label'); // create label element
 
-    label.innerText = task;
-    checkBox.type = 'checkbox';
+    label.innerText = task; // passing inner text
+    checkBox.type = 'checkbox'; // setting input type as checkbox
 
-    listItem.appendChild(checkBox);
-    listItem.appendChild(label);
+    listItem.appendChild(checkBox); // appending checkbox item 
+    listItem.appendChild(label); // appending label
 
     return listItem;
 }
 
 let addTask = function(event) {
-    event.preventDefault();
-    let listItem = createTask(newTask.value);
+    event.preventDefault(); // stopping reload when form submitted.
+    let listItem = createTask(newTask.value); // newTask value passing into createTask function.
     todoUl.appendChild(listItem);
-    newTask.value = "";
+    newTask.value = ""; // blank newTask input value.
     // bind the new list item to the incomplete list
     bindInCompleteItems(listItem, completeTask);
 }
