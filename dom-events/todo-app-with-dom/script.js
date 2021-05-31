@@ -3,12 +3,12 @@ play with dom
  *
  */
 console.log(document.title) // using document we can access all tag or element from the html page.
-console.log(document.head) 
+console.log(document.head)
 console.dir(document.head) // it return all the property from head object. Actually in javascript everything is object
 
 // we can change the html element using dom 
 // document.title = "play with dom" // in html file title was set (DOM - Document Object Model) but now it will set the new one.
- // document.all return special object which arrange in an array. we can iterate it using for loop and can access all the elements
+// document.all return special object which arrange in an array. we can iterate it using for loop and can access all the elements
 
 
 // document.innerText returns browser output but document.textContent returns html output
@@ -49,7 +49,7 @@ container.insertBefore(divElement, h2Element) // finally set the divElement befo
 
 // ---- event listeners ---- //  
 const headerElement = document.querySelector('#header'); //  
-headerElement.addEventListener('click',  (event) =>{
+headerElement.addEventListener('click', (event) => {
     console.log(event);
 })
 
@@ -66,7 +66,7 @@ let completeUl = document.querySelector('.complete-list ul');
 
 
 // functions
-let createTask = function(task) {
+let createTask = function (task) {
     let listItem = document.createElement('li'); // create li element
     let checkBox = document.createElement('input'); // create checkbox element
     let label = document.createElement('label'); // create label element
@@ -80,7 +80,7 @@ let createTask = function(task) {
     return listItem;
 }
 
-let addTask = function(event) {
+let addTask = function (event) {
     event.preventDefault(); // stopping reload when form submitted.
     let listItem = createTask(newTask.value); // newTask value passing into createTask function.
     todoUl.appendChild(listItem);
@@ -89,7 +89,7 @@ let addTask = function(event) {
     bindInCompleteItems(listItem, completeTask);
 }
 
-let completeTask = function() {
+let completeTask = function () {
     let listItem = this.parentNode;
     let deleteBtn = document.createElement('button');
     deleteBtn.innerText = 'Delete';
@@ -102,27 +102,28 @@ let completeTask = function() {
     bindCompleteItems(listItem, deleteTask);
 }
 
-let deleteTask = function() {
+let deleteTask = function () {
     let listItem = this.parentNode;
     let ul = listItem.parentNode;
     ul.removeChild(listItem);
 }
 
-let bindInCompleteItems = function(taskItem, checkboxClick) {
+// 
+let bindInCompleteItems = function (taskItem, checkboxClick) {
     let checkBox = taskItem.querySelector('input[type="checkbox"]');
     checkBox.onchange = checkboxClick;
 }
 
-let bindCompleteItems = function(taskItem, deleteButtonClick) {
+let bindCompleteItems = function (taskItem, deleteButtonClick) {
     let deleteButton = taskItem.querySelector('.delete');
     deleteButton.onclick = deleteButtonClick;
 }
 
-for(let i=0; i< todoUl.children.length; i++ ) {
+for (let i = 0; i < todoUl.children.length; i++) {
     bindInCompleteItems(todoUl.children[i], completeTask);
 }
 
-for(let i=0; i< completeUl.children.length; i++ ) {
+for (let i = 0; i < completeUl.children.length; i++) {
     bindCompleteItems(completeUl.children[i], deleteTask);
 }
 
