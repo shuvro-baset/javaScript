@@ -59,9 +59,13 @@ headerElement.addEventListener('click', (event) => {
 
 // ----- TO-DO Project ------ // 
 // --select elements & assign them to variables.
+// select input text 
 let newTask = document.querySelector('#new-task');
+// select form 
 let form = document.querySelector('form');
+// select ul using items id
 let todoUl = document.querySelector('#items');
+// select right ul for completed task div.
 let completeUl = document.querySelector('.complete-list ul');
 
 
