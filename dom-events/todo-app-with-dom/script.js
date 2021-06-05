@@ -77,7 +77,7 @@ let createTask = function (task) {
 
     label.innerText = task; // passing inner text
     checkBox.type = 'checkbox'; // setting input type as checkbox
-
+ 
     listItem.appendChild(checkBox); // appending checkbox item 
     listItem.appendChild(label); // appending label
 
@@ -86,15 +86,16 @@ let createTask = function (task) {
 
 let addTask = function (event) {
     event.preventDefault(); // stopping reload when form submitted.
-    let listItem = createTask(newTask.value); // newTask value passing into createTask function.
+    let listItem = createTask(newTask.value); // calling createTask funct and passing newTask value into createTask function.
     todoUl.appendChild(listItem);
     newTask.value = ""; // blank newTask input value.
-    // bind the new list item to the incomplete list
+    // bind the new list item to the incomplete list with checkbox.
     bindInCompleteItems(listItem, completeTask);
 }
 
+// complete task function. it is called when checkbox is clicked from incomplete task panel.
 let completeTask = function () {
-    let listItem = this.parentNode;
+    let listItem = this.parentNode; // finding list item.
     let deleteBtn = document.createElement('button');
     deleteBtn.innerText = 'Delete';
     deleteBtn.className = 'delete';
@@ -112,7 +113,7 @@ let deleteTask = function () {
     ul.removeChild(listItem);
 }
 
-// 
+// binding incomplete items when clicked the checkbox item from incomplete task panel.
 let bindInCompleteItems = function (taskItem, checkboxClick) {
     let checkBox = taskItem.querySelector('input[type="checkbox"]');
     checkBox.onchange = checkboxClick;
