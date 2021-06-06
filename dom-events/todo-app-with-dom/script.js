@@ -86,25 +86,25 @@ let createTask = function (task) {
 
 let addTask = function (event) {
     event.preventDefault(); // stopping reload when form submitted.
-    let listItem = createTask(newTask.value); // calling createTask funct and passing newTask value into createTask function.
+    let listItem = createTask(newTask.value); // calling createTask function and passing newTask value into createTask function.
     todoUl.appendChild(listItem);
     newTask.value = ""; // blank newTask input value.
     // bind the new list item to the incomplete list with checkbox.
-    bindInCompleteItems(listItem, completeTask);
+    bindInCompleteItems(listItem, completeTask); // also calling completeTask function when checkbox is clicked.
 }
 
 // complete task function. it is called when checkbox is clicked from incomplete task panel.
 let completeTask = function () {
     let listItem = this.parentNode; // finding list item.
-    let deleteBtn = document.createElement('button');
-    deleteBtn.innerText = 'Delete';
-    deleteBtn.className = 'delete';
-    listItem.appendChild(deleteBtn);
+    let deleteBtn = document.createElement('button'); // cheating delete button
+    deleteBtn.innerText = 'Delete'; // set inner text for delete button
+    deleteBtn.className = 'delete'; // set class name for delete button
+    listItem.appendChild(deleteBtn); // appending delete button
 
-    let checkBox = listItem.querySelector('input[type="checkbox"]');
-    checkBox.remove();
-    completeUl.appendChild(listItem);
-    bindCompleteItems(listItem, deleteTask);
+    let checkBox = listItem.querySelector('input[type="checkbox"]'); // selecting checkbox
+    checkBox.remove(); // remove checkbox
+    completeUl.appendChild(listItem); // finally appending new list item in to complete list
+    bindCompleteItems(listItem, deleteTask); // calling deleteTask function
 }
 
 let deleteTask = function () {
