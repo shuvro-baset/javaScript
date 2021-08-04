@@ -18,3 +18,7 @@ function sum(n){
 }
 console.log(sum(5)) // it return first 5the number sum
 
+
+for(let i = 10; i>=1; i--){
+    console.log(i);
+ }

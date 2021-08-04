@@ -15,8 +15,8 @@ console.log(a)
 a.unshift(100)
 
 // adding new value in specific position (start, delete item, value)
-a.splice(6,0,37)
-console.log(a)
+a.splice(9,0,37)
+console.log("after splice: ",a)
 
 
 // delete last element from the array
@@ -87,3 +87,7 @@ console.log(j.join(' '))// in the single quotation what we give it it will separ
 
 // fill method can fill all the elements of an array.
 // arr.concat(my_array) 
+
+
+var test_arr = [1,2,3,4,5,6,7];
+console.log(test_arr.pop())
