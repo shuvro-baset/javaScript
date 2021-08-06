@@ -15,7 +15,16 @@ else{
         console.log("c is biggest value")
     }
 }
-
+// another way using if else 
+if (a>b && a>c){
+    console.log("a is biggest value");
+}
+else if(b>a && b>c){
+    console.log("b is biggest value");
+}
+else{
+    console.log("c is biggest value");
+}
 // another way to find max value
 var max = Math.max(a,b,c);
 console.log("max value is : ", max);
