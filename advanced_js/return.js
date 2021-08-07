@@ -1,3 +1,4 @@
+// calling a function inside the function
 function greet(msg) {
     function greetings (name){
         return msg + ", " + name
