@@ -3,7 +3,7 @@
 // declare function name seerToMon to convert seer to mon
 function seerToMon(seer){
     // checking parameter type and valid number. string and negative number is not allowed.
-    if(typeof seer == 'string' || seer<=0){
+    if(typeof seer != 'number' || seer<=0){
         console.log("Please give a positive number. blank or string or negative value is not allowed");
     }
     else{
@@ -20,67 +20,100 @@ seerToMon(10);
 
 // ------ Problem-2 ------- 
 /*
-
-// ---- Problem-3 ------- 
-
-function deliveryCost(){
-
+// declare a function called totalSales
+function totalSales(shirtQuantity, pantQuantity, shoesQuantity) {
+    // type validation
+    if(typeof shirtQuantity != 'number' || typeof pantQuantity != 'number'|| typeof shoesQuantity != 'number') {
+        console.log("string value not allowed");
+    }
+    // negative value validation
+    else if(shirtQuantity< 0 || pantQuantity< 0 || shoesQuantity < 0){
+        console.log("positive value required");
+    }
+    // float value validation
+    else if(shirtQuantity% 1 != 0 || pantQuantity% 1 != 0 || shoesQuantity % 1 != 0){
+        console.log("product quantity can not be float value");
+    }
+    
+    else{
+        const singleShirtPrice = 100;
+        const singlePantPrice = 200;
+        const singleShoesPrice = 500;
+        // calculate total sales price
+        const totalPrice = shirtQuantity*singleShirtPrice + pantQuantity*singlePantPrice + shoesQuantity*singleShoesPrice ;
+        // return totalPrice
+        return totalPrice;
+    }
 }
-function totalSales(shirtsQuantity, pantsQuantity, shoesQuantity) {
-    const singleShirtPrice = 100;
-    const singlePantPrice = 200;
-    const singleShoesPrice = 500;
-    const shirtsTotalPrice = singleShirtPrice * shirtsQuantity;
-    const pantsTotalPrice = singlePantPrice * pantsQuantity;
-    const shirtTotalPrice = singleShoesPrice * shoesQuantity;
-    const totalPrice = shirtsTotalPrice+ pantsTotalPrice+shirtTotalPrice ;
-    console.log(totalPrice);
-    return totalPrice;
-
-}
-totalSales(3,2,1);
+// calling function
+totalSales(2,2,1);
 
 */
 
 // ---- Problem-3 ------- 
-/*
-function deliveryCost(shirtQuantity){
-    const deliveryCostForFirst100Shirt = 100;
-    const deliveryCostForSecond200Shirt = 80;
-    const deliveryCostForMoreThan200Shirt = 50;
-    let totalDeliveryCost = 0;
 
-    if(shirtQuantity <=100){
-        totalDeliveryCost = deliveryCostForFirst100Shirt* shirtQuantity;
+// declare a function name deliveryCost
+function deliveryCost(shirtQuantity){
+    // define a variable called deliveryCostForFirst100Shirt and set the value 100
+    const deliveryCostForFirst100Shirt = 100;
+    // define a variable called deliveryCostForSecond100Shirt and set the value 80
+    const deliveryCostForSecond100Shirt = 80;
+    // define a variable called deliveryCostForMoreThan200Shirt and set the value 50
+    const deliveryCostForMoreThan200Shirt = 50;
+    // define a variable called totalDeliveryCost and set the value 0
+    let totalDeliveryCost = 0;
+    // validation check
+    if(typeof shirtQuantity != 'number' || shirtQuantity<=0 || shirtQuantity% 1 != 0){
+        const errorMessage = "shirt quantity can't be string or negative or float";
+        return errorMessage;
     }
+    // if shirtQuantity is more than 0 less than 101
+    else if(shirtQuantity <=100){
+        totalDeliveryCost = deliveryCostForFirst100Shirt* shirtQuantity;
+        // return total delivery Cost
+        return totalDeliveryCost;
+    }
+    // if shirtQuantity is more than 100 less than 201
     else if(shirtQuantity <=200){
         const shirtQuantityMoreThan100 = shirtQuantity - 100;
-        totalDeliveryCost = (100*100) + (shirtQuantityMoreThan100*deliveryCostForSecond200Shirt);
+        totalDeliveryCost = (deliveryCostForFirst100Shirt*100) + (shirtQuantityMoreThan100*deliveryCostForSecond100Shirt);
+        // return total delivery Cost
+        return totalDeliveryCost;
     }
+    // if shirtQuantity is more than 200
     else{
         const shirtQuantityMoreThan200 =shirtQuantity - 200;
-        totalDeliveryCost = (100*100) + (100*80) + (shirtQuantityMoreThan200*deliveryCostForMoreThan200Shirt);  
+        totalDeliveryCost = (deliveryCostForFirst100Shirt*100) + (deliveryCostForSecond100Shirt*100) + (shirtQuantityMoreThan200*deliveryCostForMoreThan200Shirt);  
+        // return total delivery Cost
+        return totalDeliveryCost;
     }
-    console.log(totalDeliveryCost);
-    return totalDeliveryCost;
 }
+//calling deliveryCost function
+deliveryCost(-201);
 
-deliveryCost(220);
-*/
 
 // ---- Problem-4 -----
-/*
+
+// declare a function name perfectFriend
 function perfectFriend(friendsName) {
+    // validation check.
+    if(Array.isArray(friendsName) == false){
+        const errorMessage = 'Please insert a array type data';
+        return errorMessage;
+    }
+    // for loop for finding friend that contains 5 character
     for (let i =0; i<friendsName.length; i++) {
+        // checking 5 character friend name
         if(friendsName[i].length == 5){
             return friendsName[i];
         }
+        // if 5 character friend name is not found
         else if(i == friendsName.length-1){
-            return `There is no perfectFriend`;
+            const result = "There is no perfectFriend";
+            return result;
         }
     }
-    // console.log(firstFriendNameLength);
 }
-console.log(perfectFriend(['shuvro', 'base', 'atiq', 'ibrahim', 'pushpo', 'ratree']));
+// calling perfectFriend function 
+perfectFriend();
 
-*/
