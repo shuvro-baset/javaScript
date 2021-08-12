@@ -46,6 +46,8 @@ const h2Element = container.querySelector('h2'); // we take another reference el
 container.insertBefore(divElement, h2Element) // finally set the divElement before the h2Element . 'insertBefore' function take two parameter first one is for value 2nd is for reference element
 
 // container.appendChild(divElement) --> it will set into last element of the container.
+// querySelectorAll wip
+
 
 // ---- event listeners ---- //  
 const headerElement = document.querySelector('#header'); //  
