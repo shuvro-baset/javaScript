@@ -91,3 +91,10 @@ console.log(j.join(' '))// in the single quotation what we give it it will separ
 
 var test_arr = [1,2,3,4,5,6,7];
 console.log(test_arr.pop())
+
+// sorting array in perfect way. js sorting new algorithm using compare function. 
+var numbers = [4, 2, 5, 1, 3];
+numbers.sort(function(a, b) {
+  return a - b;
+});
+console.log(numbers);
