@@ -1,3 +1,4 @@
+
 // initializing an array . 
 var a = [23,75,7,10]
 console.log(a)
@@ -98,3 +99,5 @@ numbers.sort(function(a, b) {
   return a - b;
 });
 console.log(numbers);
+
+
