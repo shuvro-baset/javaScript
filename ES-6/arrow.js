@@ -13,7 +13,7 @@ console.log(multiParam(23,75))
  
 
 /*
-    -JavaScript arrow functions are roughly the equivalent of lambda functions in python
-    
+
+
 
 */

@@ -33,4 +33,17 @@ var arrowFunc4 = (num1, num2) => {
     return result;
 }
 console.log(arrowFunc4(2,3))
+
+const name ="Arrow function";
+let me = { 
+ name: "Regular function", 
+ thisInArrow:() => { 
+   console.log("Example of " + this.name); //no 'this' binding here 
+ }, 
+ thisInRegular(){ 
+   console.log("Example of " + this.name); //'this' binding works here 
+ } 
+};
+me.thisInArrow(); 
+me.thisInRegular();
 */
