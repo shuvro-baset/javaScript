@@ -1,3 +1,18 @@
+# todo: javascript 
+    - javascript is the world's most popular programming language.
+    - its easy to learn.
+    - Cached JavaScript files can speed up page loads.
+    - javascript codeBlocks.....
+
+
+
+
+
+
+
+
+
+
 # tod0: Var, Let, and Const – What's the Difference?
     * var declarations are globally scoped or function scoped while let and const are block scoped.
     * var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared;   const variables can neither be updated nor re-declared.
