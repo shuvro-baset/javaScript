@@ -1,17 +1,18 @@
 // object is a set of data that can be arrange very efficiently
 // it has some property and value.
-var obj = {
+const obj = {
     a : 10,
     b:15,
 }
 // we can add new data into an object outside of the object variable using point notation.
 obj.z = 17
+obj.a=75
 console.log(obj)
 
 
 // ------- object --------- //
 // define object
-var obj = {name: "shuvro", age: 28, phone: "1675"}
+var obj1 = {name: "shuvro", age: 28, phone: "1675"}
 console.log(obj)
 // calling object property 1st way
 var objName = obj.name

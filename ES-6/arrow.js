@@ -11,3 +11,9 @@ console.log(doubleIt(10));
 const multiParam = (x,y) => x+y;
 console.log(multiParam(23,75))
  
+
+/*
+    -JavaScript arrow functions are roughly the equivalent of lambda functions in python
+    
+
+*/
