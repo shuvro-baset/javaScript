@@ -46,4 +46,47 @@ let me = {
 };
 me.thisInArrow(); 
 me.thisInRegular();
+
+var greeter = "hey hi";
+    var times = 4;
+
+    if (times > 3) {
+        var greeter = "say Hello instead"; 
+    }
+    
+    console.log(greeter) // "say Hello instead"
+
+
+var numberArray = [1,2,3,4,5,6,7];
+var multipleByFive = numberArray.map(n => n*5);
+console.log(multipleByFive);
+let arr = [1,2,3,4,5,6,7,8,9,10,11,12]
+
+let odds = arr.filter(n => n%2)
+
+console.log(odds)
+
+var productPrice = [
+    {
+        name: 'compass',
+        price: 35,
+    },
+    {
+        name: 'ruler',
+        price: 52,
+    },
+    {
+        name: 'bag',
+        price: 5000,
+    },
+    {
+        name: 'printer',
+        price: 5000,
+    }
+]
+const findFiveThousandTaka = productPrice.find(productPrice => productPrice.price ==5000);
+console.log(findFiveThousandTaka);
 */
+const list = [12, 'shuvro', 'baset', 'pushpo', 'ratri']
+const three = list[2];
+console.log(three);

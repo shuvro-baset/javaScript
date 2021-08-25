@@ -10,10 +10,3 @@ console.log(doubleIt(10));
 // if we use more parameter then we need to use braces
 const multiParam = (x,y) => x+y;
 console.log(multiParam(23,75))
- 
-
-/*
-
-
-
-*/
