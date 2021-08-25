@@ -3,7 +3,11 @@
     - its easy to learn.
     - Cached JavaScript files can speed up page loads.
     - javascript codeBlocks.....
-
+# extra points: 
+    - fixed values are called Literals.
+    - let can not be re-declarable.
+    - let and const block scoped
+    - let and const also hoisted
 
 
 
