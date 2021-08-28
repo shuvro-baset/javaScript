@@ -1,18 +1,33 @@
-function loadComments(){
+const loadComments = () => {
     fetch('https://jsonplaceholder.typicode.com/comments')
     .then(response => response.json())
     .then(data => commentsDetails(data))
 }
 // direct function calling if I need all the data when page is loaded. no onclick button.
 loadComments();
-function commentsDetails(comments){
+
+
+const commentsDetails = comments => {
+
     const commentsDiv = document.getElementById('comments');
-    for(const d of comments){
-        const h4 =document.createElement('h4');
-        const p = document.createElement('p');
-        h4.innerText = d.name;
-        p.innerText = d.body;
-        commentsDiv.appendChild(h4);
-        commentsDiv.appendChild(p);
-    }
+    comments.forEach(comment => {
+        console.log(comment);
+
+        const div = document.createElement('div');
+        div.classList.add('comment')
+        div.innerHTML = `
+            <p>${comment.postId}</p>
+            <p>${comment.name}</p>
+            <button onclick="loadCommentsById('${comment.id}')">Details</button>
+        `;
+        commentsDiv.appendChild(div);
+    });
 }
+
+// const loadCommentsById = id => {
+//     // const url = `https://jsonplaceholder.typicode.com/comments${id}`;
+//     // fetch(url)
+//     //     .then(res => res.json())
+//     //     .then(data => displayCountryDetail(data[0]));
+//     console.log(id)
+// }
