@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random | User</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div id="userDetails" class="col-6">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const randomUserDataLoad = () => {
+            fetch('https://randomuser.me/api/')
+                .then(response => response.json())
+                // calling the commentDetail function will show in the html page.
+                .then(data => randomUserDetails(data.results[0]))
+                
+        }
+        randomUserDataLoad();
+        const randomUserDetails = data => {
+            const userDetailsDiv = document.getElementById('userDetails');
+            const name = data.name.title + ' ' + data.name.first + ' ' + data.name.last;
+            const streetNumber = data.location.street.number;
+            const streetName = data.location.street.name;
+            const city = data.location.city;
+            const state = data.location.state;
+            const country = data.location.country;
+            const coordinates = data.location.coordinates.latitude + ' ' +data.location.coordinates.longitude;
+            const userImage = data.picture.thumbnail;
+            const userDiv = document.createElement('div');
+            userDiv.innerHTML=`
+                <h3>UserName : ${name} </h3>
+                <p>streetNumber : ${streetNumber}</p>
+                <p>streetName : ${streetName}</p>
+                <p>city : ${city}</p>
+                <p>state : ${state}</p>
+                <p>country : ${country}</p>
+                <p>coordinates : ${coordinates}</p>
+                <img src="${userImage}">
+            `
+            userDetailsDiv.appendChild(userDiv)
+        }
+    </script>
+</body>
+</html>
