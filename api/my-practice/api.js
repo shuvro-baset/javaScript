@@ -8,15 +8,12 @@ loadComments();
 
 
 const commentsDetails = comments => {
-
     const commentsDiv = document.getElementById('comments');
     comments.forEach(comment => {
-        console.log(comment);
-
         const div = document.createElement('div');
         div.classList.add('comment')
         div.innerHTML = `
-            <p>${comment.postId}</p>
+            <p>${comment.id}</p>
             <p>${comment.name}</p>
             <button onclick="loadCommentsById('${comment.id}')">Details</button>
         `;
@@ -24,10 +21,20 @@ const commentsDetails = comments => {
     });
 }
 
-// const loadCommentsById = id => {
-//     // const url = `https://jsonplaceholder.typicode.com/comments${id}`;
-//     // fetch(url)
-//     //     .then(res => res.json())
-//     //     .then(data => displayCountryDetail(data[0]));
-//     console.log(id)
-// }
+const loadCommentsById = id => {
+    const url = `https://jsonplaceholder.typicode.com/comments/${id}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayCommentDetail(data));
+    
+}
+
+const displayCommentDetail = comment => {
+    console.log(comment);
+    const commentDiv = document.getElementById('comment-details');
+    commentDiv.innerHTML = `
+        <h5>${comment.id}</h4>
+        <p>population: ${comment.name}</p>
+        <p>body: ${comment.body}</p>
+    `
+}
