@@ -67,17 +67,16 @@ const values = Object.values(bottle);
 // console.log(values);
 const pairs = Object.entries(bottle); // it gives a two dimensional array with all keys and values
 // console.log(pairs);
-// Object.seal(bottle); // if I seal the object then it can't be delete/add any property but can change property value. 
-Object.freeze(bottle); // no change to properties. totally freeze.
+Object.seal(bottle); // if I seal the object then it can't be delete/add any property but can change property value. 
+// Object.freeze(bottle); // no change to properties. totally freeze.
 bottle.price = 100;
 bottle.height = 16;
 delete bottle.isCleaned;
 console.log(bottle);
 
-
 // Loop through an object using for in, for of, object entries
 
-const bottle = {
+const bottle1 = {
     color: 'yellow',
     hold: 'water',
     price: 50,
@@ -88,6 +87,8 @@ for(let i = 0; i<10;i++){}
 for(const num of numbers){} // array
 for(const prop in student){} // object
 */
+
+
 for (const prop in bottle) {
     // console.log(prop, bottle[prop]);
 }
