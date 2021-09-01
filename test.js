@@ -27,4 +27,8 @@ const double2 = (num1, num2) => {
     const newNum2 = num2 + 7;
     return (newNum1 + newNum2)
 }
-console.log(double2(2,5));
+// console.log(double2(2,5));
+
+const array2 = [12,25,24,28,16,14,84].map(x => x/7);
+// console.log(array2);
+
