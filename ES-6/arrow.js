@@ -2,7 +2,6 @@
 // after arrow sign we write something that will return what we want.
 
 // function_name => return --- this is the syntax for arrow function
-
 const doubleIt = num => num*5;
 console.log(doubleIt(10));
 
